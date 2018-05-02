@@ -3,6 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 
 var assignment = require('../controllers/assignments');
+var test = require('../controllers/tests');
 var initDB = require('../controllers/init');
 initDB.init();
 
@@ -15,7 +16,7 @@ router.post('/index', assignment.getAssignment);
 
 /* POST Upload results*/
 /* method obtained from: */
-/*
+
 router.post('/upload', function (req, res, next) {
     // create an incoming form object
     var form = new formidable.IncomingForm();
@@ -45,7 +46,7 @@ router.post('/upload', function (req, res, next) {
     // parse the incoming request containing the form data
     form.parse(req);
 });
-*/
+
 router.get('/tests', function(req,res, next) {
     res.render('tests', { title: 'Create Test' });
 });
