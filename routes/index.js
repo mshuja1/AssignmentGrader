@@ -1,11 +1,18 @@
 var express = require('express');
 var router = express.Router();
+var bodyParser = require('body-parser');
+
+var assignment = require('../controllers/assignments');
+var initDB = require('../controllers/init');
+initDB.init();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: ' Java Assignment Grader' });
+  res.render('index', { title: 'Create Assignment' });
 });
 
+/* POST Upload results*/
+/* method obtained from: */
 router.post('/upload', function (req, res, next) {
     // create an incoming form object
     var form = new formidable.IncomingForm();
@@ -35,4 +42,11 @@ router.post('/upload', function (req, res, next) {
     // parse the incoming request containing the form data
     form.parse(req);
 });
+
+router.get('/tests', function(req,res, next) {
+    res.render('tests', { title: 'Create Test' });
+})
+
+router.post('/tests', assignment.insert);
+
 module.exports = router;

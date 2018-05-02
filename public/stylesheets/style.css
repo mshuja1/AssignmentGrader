@@ -5,7 +5,7 @@
 html,
 body {
   height: 100%;
-  background-color: #4791D2;
+  background-color: black;
 }
 
 body {
@@ -13,8 +13,21 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.jumbotron{
+    background-color: #3F729B;
+}
+
 .row {
-  margin-top: 80px;
+  margin: 10px 6% 10px 6%;
+}
+
+form {
+    background-color: white;
+    padding: 2%;
+}
+
+input[type=button] {
+    margin: 3% 0;
 }
 
 .upload-btn {
@@ -42,8 +55,14 @@ h4 {
   color: #9CA3A9;
 }
 
+.glyphicon-check {
+    font-size: 2em;
+    margin-top: 5px;
+    display: block;
+    visibility: hidden;
+}
+
 h2 {
-  margin-top: 15px;
   color: #68757E;
 }
 
