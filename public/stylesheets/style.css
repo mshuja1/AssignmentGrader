@@ -1,7 +1,10 @@
 .btn:focus, .upload-btn:focus{
   outline: 0 !important;
 }
-
+.results {
+    style = "margin-top: 10px";
+    color: "white";
+}
 html,
 body {
   height: 100%;

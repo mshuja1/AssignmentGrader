@@ -16,7 +16,7 @@
         <h1 style="color: white">JavaGrader</h1>
         <h2 style="color: white"><%= title %></h2>
         </div>
-        <form class="row" style="border-radius: 5px; margin: 4% 6%" id="xForm" onsubmit="onSubmit('/tests)">
+        <form class="row" style="border-radius: 5px; margin: 4% 6%" id="xForm" onsubmit="onSubmit('/index')">
             <h2>Assignment Name</h2>
             <div>
                 <input type="text" name="title" id="title" class="form-control text-center"><br>
@@ -65,12 +65,14 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" class="btn btn-success btn-lg " value="Click here to continue!">
+            <input type="submit" class="btn btn-success btn-lg" value="Create Assignment">
         </form>
+
+        <a class="btn btn-primary btn-lg" href="/grader">Click here to continue</a>
 
         <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
 
-        <div id="results" style="margin-top: 10px"></div>
+        <div id="results"></div>
 
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
