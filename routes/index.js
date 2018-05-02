@@ -3,7 +3,6 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 
 var assignment = require('../controllers/assignments');
-var test = require('../controllers/tests');
 var initDB = require('../controllers/init');
 initDB.init();
 
@@ -12,7 +11,7 @@ router.get('/index', function(req, res, next) {
   res.render('index', { title: 'Create Assignment' });
 });
 
-router.post('/index', assignment.getAssignment);
+router.post('/index', assignment.insert);
 
 /* POST Upload results*/
 /* method obtained from: */
@@ -47,10 +46,9 @@ router.post('/upload', function (req, res, next) {
     form.parse(req);
 });
 
-router.get('/tests', function(req,res, next) {
-    res.render('tests', { title: 'Create Test' });
+router.post('/tests', function(req,res,next) {
+   var title = req.body.title;
+   res.render('tests', {title : title});
 });
-
-router.post('/tests', assignment.insert);
 
 module.exports = router;

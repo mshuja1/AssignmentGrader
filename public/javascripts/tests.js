@@ -17,8 +17,8 @@ function sendAjaxQuery(url, data) {
                 var element = document.createElement("div");
 
                 for(var i=0; i<ret.length; i++){
-                    element.appendChild("Assignment: " + results[i].assignment_title);
-                    element.appendChild("Marks: " + results[i].total_marks);
+                    element.appendChild("Test: " + results[i].test_title);
+                    element.appendChild("Marks: " + results[i].marks);
                 }
                 document.getElementById('results').appendChild(element);
             }

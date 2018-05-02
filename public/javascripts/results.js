@@ -12,16 +12,7 @@ function sendAjaxQuery(url, data) {
             var ret = dataR;
             // in order to have the object printed by alert
             // we need to JSON stringify the object
-            document.getElementById('results').innerHTML = ""; //JSON.stringify(ret)
-            if (ret.length>0){
-                var element = document.createElement("div");
-
-                for(var i=0; i<ret.length; i++){
-                    element.appendChild("Assignment: " + results[i].assignment_title);
-                    element.appendChild("Marks: " + results[i].total_marks);
-                }
-                document.getElementById('results').appendChild(element);
-            }
+            document.getElementById('results').innerHTML= JSON.stringify(ret);
         },
         error: function (xhr, status, error) {
             alert('Error: ' + error.message);
@@ -29,13 +20,13 @@ function sendAjaxQuery(url, data) {
     });
 }
 
-function onSubmit(url) {
+function onSubmit() {
     var formArray = $("form").serializeArray();
     var data = {};
     for (index in formArray) {
         data[formArray[index].name] = formArray[index].value;
     }
 
-    sendAjaxQuery(url, data);
+    sendAjaxQuery('/index', data);
     event.preventDefault();
 }

@@ -1,9 +1,11 @@
 var mongoose = require('mongoose');
+var Assignment = require('../models/assignments');
 
 var Schema = mongoose.Schema;
 
-var Tests = new Schema(
+var Test = new Schema(
     {
+        assignment_id: {type: Schema.Types.ObjectId, ref: 'Assignment'},
         test_title: {type: String, required: true, max: 100},
         marks: {type: Number, required: true, max: 100},
         test_body: {type: String, required: true},
@@ -12,4 +14,4 @@ var Tests = new Schema(
     }
 );
 
-module.exports = mongoose.model('Tests', Tests);
+module.exports = mongoose.model('Test', Test);

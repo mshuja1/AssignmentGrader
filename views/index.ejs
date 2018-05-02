@@ -9,6 +9,7 @@
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link href="/stylesheets/style.css" rel="stylesheet">
+        <script src="/javascripts/index.js"></script>
     </head>
     <body>
         <div style="margin: 3%;"></div>
@@ -67,12 +68,12 @@
             </div>
             <input type="submit" class="btn btn-success btn-lg" name="g" value="Create Assignment">
         </form>
-
-        <a class="btn btn-primary btn-lg" href="/test">Click here to continue</a>
-
+        <form class="row" style="border-radius: 5px; margin: 4% 6%; background-color: black" id="nextPage" action="tests" method="POST">
+            <div id="results">
+            </div>
+            <input type="submit" class="btn btn-primary btn-lg" value="Click here to continue!">
+        </form>
         <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
-
-        <div id="results"></div>
 
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

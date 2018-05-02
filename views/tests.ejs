@@ -5,50 +5,53 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>JavaGrader: <%= title %></title>
+        <title>JavaGrader: Assignment <%= title %></title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link href="/stylesheets/style.css" rel="stylesheet">
+        <script src="/javascripts/tests.js"></script>
     </head>
     <body>
         <div style="margin: 3%;"></div>
         <div class="jumbotron">
             <h1 style="color: white">JavaGrader</h1>
-            <h2 style="color: white"><%= title %></h2>
+            <h2 style="color: white">Assignment: <%= title %></h2>
         </div>
-        <form class="row" style="border-radius: 5px; margin: 4% 6%">
+        <form id="xForm" class="row" style="border-radius: 5px; margin: 4% 6%" onsubmit="onSubmit('/tests')">
             <h2>Test Name</h2>
             <div>
                 <input type="text" name="title" id="title" class="form-control text-center"><br>
             </div>
             <h2>Test Marks</h2>
             <div>
-                <input type="number" name="total" id="total" class="form-control text-center"><br>
+                <input type="number" name="marks" id="marks" class="form-control text-center"><br>
             </div>
             <h2>
                 Test (type your code here)
             </h2>
             <div class="form-group">
-                <textarea class="form-control" id="code" rows="5"></textarea>
+                <textarea class="form-control" name="code" id="code" rows="5"></textarea>
             </div>
             <h2>Positive Feedback</h2>
             <div>
-                <input type="text" name="pfeedback" id="pfeedback" class="form-control text-center"><br>
+                <input type="text" name="pass" id="pass" class="form-control text-center"><br>
             </div>
             <h2>Negative Feedback</h2>
             <div>
-                <input type="text" name="nfeedback" id="nfeedback" class="form-control text-center"><br>
+                <input type="text" name="fail" id="fail" class="form-control text-center"><br>
             </div>
             <input type="button" class="btn btn-success btn-lg" value="Submit Test">
         </form>
-        <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
 
         <div id="results" style="margin-top: 10px"></div>
 
-        <a class="btn btn-primary btn-lg" href="/grader">Click here to continue</a>
+        <form class="row" style="border-radius: 5px; margin: 4% 6%; background-color: black" id="nextPage" action="results" method="POST">
+            <div id="results">
+            </div>
+            <input type="submit" class="btn btn-primary btn-lg" value="Click here to continue!">
+        </form>
 
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="/javascripts/upload.js"></script>
     </body>
 </html>
