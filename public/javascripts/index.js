@@ -1,8 +1,9 @@
 function sendAjaxQuery(url, data) {
+    var stringifieddata = JSON.stringify(data);
     $.ajax({
         url: url ,
-        data: data,
-        dataType: 'json',
+        data: stringifieddata,
+        contentType: 'application/json',
         type: 'POST',
         success: function (dataR) {
             // no need to JSON parse the result, as we are using

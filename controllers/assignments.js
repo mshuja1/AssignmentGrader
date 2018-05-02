@@ -15,7 +15,7 @@ exports.getAssignment = function (req, res) {
                 if (assignment.length > 0) {
                     var firstElem = assignments[0];
                     assignment = {
-                        title: firstElem.assignment_title, marks: firstElem.total_marks,
+                        title: firstElem.assignment_title, marks: firstElem.total_marks
                     };
                 }
                 res.setHeader('Content-Type', 'application/json');
@@ -44,7 +44,7 @@ exports.insert = function(req, res) {
                 res.status(500).send('Invalid data!');
 
             res.setHeader('Content-Type', 'application/json');
-            res.send(JSON.stringify(character));
+            res.send(JSON.stringify(assignment));
         });
     } catch (e) {
         res.status(500).send('error'+e);
